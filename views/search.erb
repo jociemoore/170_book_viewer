@@ -1,0 +1,25 @@
+<h2 class = "content-subhead">Search</h2>
+
+<form action="/search" method="get">
+  <input name="query" value="<%= params[:query]%>">
+  <button type="submit">Search</button>
+  <%=@results_headline%>
+  <ul>
+    <% @matching_results.each_with_index do |chapter, index| %>
+      <li><h4><%= @contents[chapter - 1] %></h4></li>
+      <ul>
+        <%@matching_paragraphs.each_pair do |chap, paragraph|%>
+            <%paragraph.each_pair do |id, text|%>
+              <% if chapter == chap %>
+                <li>
+                  <a href="/chapters/<%=chap%>#<%=id%>"><%=text%></a>
+                </li>
+              <% end %>
+            <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+</form>
+
+

@@ -1,4 +1,3 @@
-# 170 Web Development: Small Ebook Reading Application
+# Book Viewer Application
 
-Skills practiced in the lesson include:
-* Developing with the Sinatra Framework
+This is a small ebook reading application. I used this project to practice developing with the Sinatra framework, creating routes, and rendering templates. 
